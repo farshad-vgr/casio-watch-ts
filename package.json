@@ -1,0 +1,20 @@
+{
+  "name": "casio-watch",
+  "version": "1.0.0",
+  "description": "Casio watch simulation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farshad-vgr/casio-watch-ts.git"
+  },
+  "author": "farshadvaghari@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/farshad-vgr/casio-watch-ts/issues"
+  },
+  "homepage": "https://github.com/farshad-vgr/casio-watch-ts#readme"
+}
