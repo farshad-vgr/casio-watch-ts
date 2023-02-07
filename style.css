@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+
+/*----------------------------------------- CSS Reset: */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  cursor: default;
+  user-select: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(images/bg.jpg);
+  background-size: 30rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/*----------------------------------------- Analog Clock:  */
+.analog-clock {
+  position: relative;
+  width: 13rem;
+  height: 13rem;
+  border-radius: 50%;
+  transform: rotateY(12deg) translateX(-3px) translateY(-9px);
+}
+
+.numbers div {
+  position: absolute;
+  font-size: 2rem;
+  font-weight: bold;
+  color: silver;
+}
+
+.twelve {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.three {
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.six {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nine {
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.arrows {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.arrows::after {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: red;
+  z-index: 5;
+}
+
+.arrows div {
+  position: absolute;
+  bottom: 50%;
+  transform-origin: bottom center;
+  border-radius: 50% 50% 0 0;
+  z-index: 3;
+}
+
+.arrows .hour {
+  width: 0.4rem;
+  height: 20%;
+  background-color: gray;
+  z-index: 2;
+}
+
+.arrows .minute {
+  width: 0.25rem;
+  height: 30%;
+  background-color: silver;
+  z-index: 3;
+}
+
+.arrows .second {
+  width: 0.15rem;
+  height: 40%;
+  background-color: red;
+  z-index: 4;
+}
+
+/*----------------------------------------- Digital date:  */
+.digital-date {
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 1;
+}
+
+.date {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  color: rgba(0, 255, 50, 0.7);
+  font-size: 1rem;
+  font-family: "orbitron", sans-serif;
+  filter: drop-shadow(0 0 7px rgba(0, 255, 50, 0.7));
+}
+
+/*----------------------------------------- Digital day:  */
+.digital-day {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 auto;
+  text-align: center;
+  z-index: 1;
+}
+
+.day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  color: rgba(0, 255, 50, 0.7);
+  font-size: 0.8rem;
+  font-family: "orbitron", sans-serif;
+  filter: drop-shadow(0 0 7px rgba(0, 255, 50, 0.7));
+}
+
+/*----------------------------------------- Digital Clock:  */
+.digital-clock {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 1;
+}
+
+.display {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0.5rem;
+  color: rgba(0, 255, 50, 0.7);
+  font-size: 1rem;
+  font-family: "orbitron", sans-serif;
+  filter: drop-shadow(0 0 7px rgba(0, 255, 50, 0.7));
+}
+
+.display span {
+  width: 24%;
+}
