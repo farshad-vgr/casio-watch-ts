@@ -7,7 +7,7 @@ const dayElement = document.querySelector(".day");
 const displayElement = document.querySelector(".display");
 // This function updates time and date values
 function updateClock() {
-    const currentTime = new Date();
+    const currentTime = new Date(); // Need a new time and date for each update
     // Extract time and date details
     let seconds = currentTime.getSeconds();
     let minutes = currentTime.getMinutes();
