@@ -4,6 +4,39 @@ const hourElement = document.querySelector(".hour") as HTMLDivElement;
 const dateElement = document.querySelector(".date") as HTMLDivElement;
 const dayElement = document.querySelector(".day") as HTMLDivElement;
 const displayElement = document.querySelector(".display") as HTMLDivElement;
+const lightButtonElement = document.querySelector(".light-btn") as HTMLButtonElement;
+const randomButtonElement = document.querySelector(".random-btn") as HTMLButtonElement;
+
+let randomRedValue: number;
+let randomGreenValue: number;
+let randomBlueValue: number;
+
+// This button changes the brightness of Digital clock
+lightButtonElement.addEventListener("click", function (): void {
+  // This part makes the brightness of colors more
+  dateElement.style.filter = "brightness(1.5)";
+  dayElement.style.filter = "brightness(1.5)";
+  displayElement.style.filter = "brightness(1.5)";
+
+  // This part returns to default the brightness of colors
+  setTimeout(() => {
+    dateElement.style.filter = "brightness(0.7)";
+    dayElement.style.filter = "brightness(0.7)";
+    displayElement.style.filter = "brightness(0.7)";
+  }, 2000);
+});
+
+// This button changes the color of Digital clock to a random color
+randomButtonElement.addEventListener("click", function (): void {
+  // Here makes 3 different random number for RGB color
+  randomRedValue = Number(Math.floor(Math.random() * 256));
+  randomGreenValue = Number(Math.floor(Math.random() * 256));
+  randomBlueValue = Number(Math.floor(Math.random() * 256));
+
+  dateElement.style.color = `rgb(${randomRedValue}, ${randomGreenValue}, ${randomBlueValue})`;
+  dayElement.style.color = `rgb(${randomRedValue}, ${randomGreenValue}, ${randomBlueValue})`;
+  displayElement.style.color = `rgb(${randomRedValue}, ${randomGreenValue}, ${randomBlueValue})`;
+});
 
 // This function updates time and date values
 function updateClock(): void {
