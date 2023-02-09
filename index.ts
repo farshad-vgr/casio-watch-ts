@@ -10,9 +10,9 @@ function updateClock(): void {
   const currentTime: Date = new Date(); // Need a new time and date for each update
 
   // Extract time and date details
-  let seconds: number = currentTime.getSeconds();
-  let minutes: number = currentTime.getMinutes();
-  let hours: number = currentTime.getHours();
+  let seconds: number | string = currentTime.getSeconds();
+  let minutes: number | string = currentTime.getMinutes();
+  let hours: number | string = currentTime.getHours();
   let weekDay: number = currentTime.getDay();
   let day: number = currentTime.getDate();
   let month: number = currentTime.getMonth();
@@ -48,25 +48,25 @@ function updateClock(): void {
   } else if (hours > 12 && hours < 22) {
     AM_PM = "P M";
     hours = hours - 12;
-    hours = 0 + hours;
+    hours = "0" + hours;
   } else if (hours === 12) {
     AM_PM = "P M";
   } else if (hours > 0 && hours < 10) {
     AM_PM = "A M";
-    hours = 0 + hours;
+    hours = "0" + hours;
   } else if (hours === 0) {
     AM_PM = "A M";
     hours = 12;
   }
 
-  // This condition checks if time is one digit and then adds a 0 to the first
+  // This condition checks if the time is one-digit and then adds a 0 to the first
   if (minutes < 10) {
-    minutes = 0 + minutes;
+    minutes = "0" + minutes;
   }
 
   // This condition checks if time is one digit and then adds a 0 to the first
   if (seconds < 10) {
-    seconds = 0 + seconds;
+    seconds = "0" + seconds;
   }
 
   // Set time values for the digital clock
